@@ -1,20 +1,16 @@
 const express = require("express");
 const { 
-    getAllQuestions, 
-    getQuestionById, 
-    createQuestion, 
-    updateQuestion, 
-    deleteQuestion,
-    checkAnswer
+    createQuestion, getAllQuestions, getQuestionsByPassage, getStandaloneQuestions, 
+    updateQuestion, deleteQuestion 
 } = require("../controllers/questionController");
 
 const router = express.Router();
 
-router.get("/all", getAllQuestions);
-router.get("/:id", getQuestionById);
 router.post("/create", createQuestion);
+router.get("/all", getAllQuestions);
+router.get("/passage/:passage_id", getQuestionsByPassage);
+router.get("/standalone", getStandaloneQuestions);
 router.put("/:id", updateQuestion);
 router.delete("/:id", deleteQuestion);
-router.post("/:id/check", checkAnswer); // Kiểm tra đáp án của người dùng
 
 module.exports = router;

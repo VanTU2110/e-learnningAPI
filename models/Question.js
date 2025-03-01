@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
 const QuestionSchema = new mongoose.Schema({
+    passage_id: { type: mongoose.Schema.Types.ObjectId, ref: "ReadingPassage", default: null }, // Không bắt buộc
+    content: { type: String, required: true },
     content: { type: String, required: true }, // Nội dung câu hỏi
     question_type: { 
         type: String, 

@@ -12,6 +12,7 @@ const topicRoutes = require("./routes/topicRoutes");
 const lessonRoutes = require("./routes/lessonRoutes");
 const questionRoutes = require("./routes/questionRoutes");
 const testRoutes = require("./routes/testRoutes");
+const readingRoutes = require("./routes/readingRoutes");
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/api/topics", topicRoutes);
 app.use("/api/lessons", lessonRoutes);
 app.use("/api/questions", questionRoutes);
 app.use("/api/tests", testRoutes);
+app.use("/api/readings", readingRoutes);
 
 app.get("/", (req, res) => {
     res.send("Backend đã sẵn sàng rồi đó, test đi");
